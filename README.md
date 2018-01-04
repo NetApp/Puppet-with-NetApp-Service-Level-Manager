@@ -1,3 +1,5 @@
+# Puppet Integration with NetApp Service Level Manager
+
 Puppet is an open source product for configuration management and automation. The NetApp Service Level Manager (NSLM) device module is designed to add support for your storage management using Puppet and its Network Device functionality. The NSLM device module has been written and tested against NSLM 1.0.
 
 This Puppet module will add one provider for every NSLM object that supports PUT, POST and DELETE request through REST APIs. This module enables Puppet users to create new Manifest files for their storage management or change their existing Manifest files to automate storage management operations along with other IT management operations. 
@@ -42,8 +44,10 @@ Configuration of NSLM server as a Puppet proxy device:
 	[url https://admin:Netapp1!@scspr0333377003.gdl.englab.netapp.com:8443/]
 ```  
 3.	List all the NSLM puppet modules and attribute the details of each module:
-
+```
    	a) slo_cifsshare : Module to manage cifsshare
+```
+
 ```   
 Post:
 Mandatory:
