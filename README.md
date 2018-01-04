@@ -57,10 +57,10 @@ Optional: directory
 
 Del:
 Mandatory:
-      key              		or    	  file_share_storage_vm_name,  
-					  file_share_storage_vm_storage_system_name,  
-					  file_share_name,  
-				          name
+      key              		or    file_share_storage_vm_name,  
+				      file_share_storage_vm_storage_system_name,  
+				      file_share_name,  
+				      name
 ```
 
   	b) slo_cifsshareacl : Module to manage cifsshare acls
@@ -138,181 +138,195 @@ Mandatory:
 ```
 		
     d) slo_fileshare : Module to manage File Shares
-		Post: 
-		Mandatory:
-			storage_service_level_key, 	or	storage_vm_name,
-			storage_vm_key, 			storage_vm_storage_system_name,
-			size,					storage_service_level_name,
-			name					name,
-								size
+```
+Post: 
+Mandatory:
+      storage_service_level_key,  or	storage_vm_name, 
+      storage_vm_key, 			storage_vm_storage_system_name,
+      size,				storage_service_level_name,
+      name				name,
+					size
 		
-		Optional:
-			storage_pool_key 		or 	storage_pool_name,
-								storage_pool_storage_system_name,
+Optional:
+      storage_pool_key 		or 	storage_pool_name,
+					storage_pool_storage_system_name,
 			
-		Put:
-		Mandatory:
-			key				or 	storage_vm_name,
-								storage_vm_storage_system_name
-								name
-		Optional: 
-			Size,
-			operational_state
+Put:
+Mandatory:
+      key			or 	storage_vm_name,
+					storage_vm_storage_system_name
+					name
+Optional:
+      Size,
+      operational_state
 					
-		Del
-		Mandatory:
-			key				or 	storage_vm_name,
-								storage_vm_storage_system_name
-								name
-							
+Del
+Mandatory:
+      key			or 	storage_vm_name,
+					storage_vm_storage_system_name
+					name
+```							
 
     e) slo_initiatorgroup : Module to manage initiator groups
-		Post
-		Mandatory:
-			initiator_os_type, 		or 	initiator_os_type
-			storage_vm_key,			storage_vm_name,
-			name					storage_vm_storage_system_name,
+```
+Post
+Mandatory:
+      initiator_os_type, 	or 	initiator_os_type
+      storage_vm_key,			storage_vm_name,
+      name				storage_vm_storage_system_name,
 								name
-		Optional: initiators 
-		Put
-		Mandatory:
-			key				or 	storage_vm_name,
-								name,
-								storage_vm_storage_system_name
-		Optional:  
- initiator_os_type,
-			initiators 
-		Del
-		Mandatory:
-			key				or 	storage_vm_name,
-								name,
-								storage_vm_storage_system_name
+Optional: initiators
+
+Put
+Mandatory:
+      key			or 	storage_vm_name,
+					name,
+					storage_vm_storage_system_name
+Optional:  
+      initiator_os_type,
+      initiators 
+
+Del
+Mandatory:
+      key			or 	storage_vm_name,
+					name,
+					storage_vm_storage_system_name
+```
 								
     f) slo_lun: Module to manage LUNs
-		Post
-		Mandatory:
-			storage_service_level_key, 	or 	 storage_service_level_name,
-			storage_vm_key, 			storage_vm_name,
-			size,					storage_vm_storage_system_name,
-			name					size,
-								name
+```
+Post
+Mandatory:
+      storage_service_level_key,  or 	 storage_service_level_name,
+      storage_vm_key, 			 storage_vm_name,
+      size,				 storage_vm_storage_system_name,
+      name				 size,
+					 name
 			
-		Optional:
-			storage_pool_key, 		or	storage_pool_name,
-			host_usage				storage_pool_storage_system_name,
-								host_usage
+Optional:
+      storage_pool_key, 	  or	storage_pool_name,
+      host_usage			storage_pool_storage_system_name,
+					host_usage
 											
-		Put
-		Mandatory:
-			key				or 	storage_vm_name,
-								name,
-								storage_vm_storage_system_name
-		Optional: 
-size,
-operational_state
+Put
+Mandatory:
+      key			or 	storage_vm_name,
+					name,
+					storage_vm_storage_system_name
+Optional: 
+      size,
+      operational_state
 	
-		Del
-		Mandatory:
-			key				or 	storage_vm_name,
-								name,
-								storage_vm_storage_system_name
+Del
+Mandatory:
+       key			or 	storage_vm_name,
+					name,
+					storage_vm_storage_system_name
+```
 									
     g) slo_lunmap: Module to manage LUN mapping
+```
+Post
+Mandatory:
+      initiator_group_key,	or 	initiator_group_storage_vm_name,
+      lun_key				initiator_group_storage_vm_storage_system_name,
+    				        initiator_group_name,
+                                        lun_storage_vm_storage_system_name,
+					lun_storage_vm_name,
+					lun_name
+Optional: lun_id
 
-		Post
-		Mandatory:
-			initiator_group_key,		or 	initiator_group_storage_vm_name,
-			lun_key	,				initiator_group_storage_vm_
-                                                                                               		storage_system_name,
-								initiator_group_name,
-lun_storage_vm_
-storage_system_name,
-								lun_storage_vm_name,
-								lun_name
-		Optional: lun_id
-		Del
-		Mandatory: 
-			key 				or	initiator_group_storage_vm_name,
-initiator_group_storage_vm_
-storage_system_name,
-  lun_storage_vm_
-  storage_system_name,
-								lun_storage_vm_name,
-								lun_name,
-								initiator_group_name
+Del
+Mandatory: 
+      key 			or	initiator_group_storage_vm_name,
+					initiator_group_storage_vm_storage_system_name,
+					lun_storage_vm_  storage_system_name,
+					lun_storage_vm_name,
+					lun_name,
+					initiator_group_name
+```
     h) slo_nfsshare: Module to manage NFS shares
-		Post
-		Mandatory:
-			export_policy_key		or 	storage_vm_name,
-			file_share_key 				storage_vm_storage_system_name
-			storage_vm_key			export_policy_storage_vm_
- 							storage_system_name,
-								export_policy_storage_vm_name,
-								export_policy_name,
-								file_share_storage_vm_name,
-								file_share_storage_vm_
- 								storage_system_name,
-								file_share_name		
-		Optional:	directory 
-		Put
-		Mandatory:
-			key 			or	file_share_storage_vm_name,
-							file_share_storage_vm_storage_system_name,
-							file_share_name,
-							directory
-		Optional:
-			export_policy_key 	or 	storage_vm_name,
-							name,
-							storage_vm_storage_system_name
-		Del
-		Mandatory:
-			key 			or 	file_share_storage_vm_name,
-							file_share_storage_vm_
- 							storage_system_name,
-							file_share_name,
-							directory
-    i) slo_snapshot: Module to manage snapshots
-		Post
-		Mandatory: 	
-name,			or	name,
-file_share_key			file_share_storage_vm_name,
-				file_share_name
-				file_share_storage_vm_storage_system_name
-		Optional: 		
-retention_type ,
-comment
-	
+```
+Post
+Mandatory:
+      export_policy_key		or 	storage_vm_name,
+      file_share_key 			storage_vm_storage_system_name
+      storage_vm_key			export_policy_storage_vm_storage_system_name,
+					export_policy_storage_vm_name,
+					export_policy_name,
+					file_share_storage_vm_name,
+					file_share_storage_vm_
+ 					storage_system_name,
+					file_share_name
+					
+Optional:	directory
 
-	Del
-		Mandatory:
-			key,			or	file_share_storage_vm_name,
-							file_share_storage_vm_storage_system_name,
-							file_share_name
-							name
+Put
+Mandatory:
+      key 			or	file_share_storage_vm_name,
+					file_share_storage_vm_storage_system_name,
+					file_share_name,
+					directory
+Optional:
+      export_policy_key 	or 	storage_vm_name,
+					name,
+					storage_vm_storage_system_name
+Del
+Mandatory:
+      key 			or 	file_share_storage_vm_name,
+					file_share_storage_vm_
+ 					storage_system_name,
+					file_share_name,
+					directory
+```
+    i) slo_snapshot: Module to manage snapshots
+```
+Post
+Mandatory: 	
+      name,			or	name,
+      file_share_key			file_share_storage_vm_name,
+					file_share_name
+					file_share_storage_vm_storage_system_name
+Optional: 		
+      retention_type ,
+      comment
+	
+Del
+Mandatory:
+      key,			or	file_share_storage_vm_name,
+					file_share_storage_vm_storage_system_name,
+					file_share_name
+					name
+```
 
     j) slo_storageservicelevel: Module to manage NSLM service definitions
-	Post
-		Mandatory:
-			expected_iops_per_tb 
-			peak_latency 
-			name 
-			peak_iops_per_tb 
+```
+Post
+Mandatory:
+        expected_iops_per_tb 
+	peak_latency 
+	name 
+	peak_iops_per_tb 
 			
 			
-		Optional:	description 
+Optional:	description 
 		
-		Put
-		Mandatory:
-			key			or 		name
-		Optional:
-			description, 
-			peak_latency,
-			peak_iops_per_tb,
-			expected_iops_per_tb
-		Del
-		Mandatory:
-			key 			or 		name
-Sample manifest file
+Put
+Mandatory:
+      key			or 		name
+Optional:
+      description, 
+      peak_latency,
+      peak_iops_per_tb,
+      expected_iops_per_tb
+      
+Del
+Mandatory:
+      key 			or 		name
+```
+
+**Sample manifest file**
+
 The following sample of a Manifest file will create a LUN and an igroup, and then map the LUN to the igroup:
 
     node 'nslm-server'{
