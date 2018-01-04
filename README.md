@@ -45,9 +45,8 @@ Configuration of NSLM server as a Puppet proxy device:
 ```  
 3.	List all the NSLM puppet modules and attribute the details of each module:
 ```
-   	a) slo_cifsshare : Module to manage cifsshare
+a) slo_cifsshare : Module to manage cifsshare
 ```
-
 ```   
 Post:
 Mandatory:
