@@ -58,80 +58,84 @@ Optional: directory
 Del:
 Mandatory:
       key              		or    	  file_share_storage_vm_name,  
-						                        file_share_storage_vm_storage_system_name,  
-					                    	    file_share_name,  
-				                      	    name
+					  file_share_storage_vm_storage_system_name,  
+					  file_share_name,  
+				          name
 ```
 
   	b) slo_cifsshareacl : Module to manage cifsshare acls
-		Post:
-		Mandatory:  
-      storage_vm_key, 	  or     	storage_vm_name,
-		  cifs_share_key  		  	    storage_vm_storage_system_name,
-						                      cifs_share_name,
-		                				      cifs_share_file_share_storage_vm_name,
-                                  cifs_share_file_share_storage_vm_
-                                  storage_system_name,
-	                					      cifs_share_file_share_name
-		Optional:   
+```
+Post:
+Mandatory:  
+      storage_vm_key,           or     	storage_vm_name,
+      cifs_share_key  		  	storage_vm_storage_system_name,
+					cifs_share_name,
+		                	cifs_share_file_share_storage_vm_name,
+                                        cifs_share_file_share_storage_vm_
+                                        storage_system_name,
+	                	        cifs_share_file_share_name
+Optional:   
       permission,
-			user_or_group
+      user_or_group
 
 
-    Put: 
-		Mandatory:
+Put: 
+Mandatory:
       key,        	      or    	storage_platform_type,
-						                      storage_vm_name,
-				                      		cifs_share_file_share_storage_vm_name,
-						                      storage_vm_storage_system_name,
-                      						cifs_share_name,
-			                            cifs_share_file_share_storage_vm_storage_system_name,
-					                      	user_or_group,
-						                      cifs_share_file_share_name	
-		Optional: permission 
+					storage_vm_name,
+				        cifs_share_file_share_storage_vm_name,
+					storage_vm_storage_system_name,
+                      			cifs_share_name,
+			                cifs_share_file_share_storage_vm_storage_system_name,
+					user_or_group,
+					cifs_share_file_share_name	
+Optional: permission 
 		
     
-		Del:
-	  	Mandatory:
-        key 	           or     	storage_platform_type,
-				                       		storage_vm_name,
-						                      cifs_share_file_share_storage_vm_name,
-					                      	storage_vm_storage_system_name,
-				                      		cifs_share_name,
-				                        	cifs_share_file_share_storage_vm_storage_system_name,
-		                      				user_or_group,
-		                      				cifs_share_file_share_name
-
+Del:
+Mandatory:
+        key 	              or     	storage_platform_type,
+				        storage_vm_name,
+					cifs_share_file_share_storage_vm_name,
+					storage_vm_storage_system_name,
+				        cifs_share_name,
+				        cifs_share_file_share_storage_vm_storage_system_name,
+		                      	user_or_group,
+		                      	cifs_share_file_share_name
+```
 
 		
     c) slo_exportpolicy : Module to manage export polices
-		Post
-		Mandatory: 
-			storage_vm_key, 	or	storage_vm_storage_system_name,
-			name				storage_vm_name,
-							name 
-		Optional:  
- root ,
-			rw_hosts, 
-			security_type, 
-			ro_hosts 
-		Put
-		Mandatory: 
-key 			or	storage_vm_name,
-							storage_vm_storage_system_name,
-							name,
+```
+Post
+Mandatory: 
+      storage_vm_key,         or	storage_vm_storage_system_name,
+      name				storage_vm_name,
+					name 
+Optional:  
+      root,
+      rw_hosts, 
+      security_type, 
+      ro_hosts 
+      
+Put
+Mandatory: 
+      key 		      or	storage_vm_name,
+					storage_vm_storage_system_name,
+					nme,
 		
-		Optional: 
- root ,
-			rw_hosts, 
-			security_type, 
-			ro_hosts 
-		Del
-		Mandatory: 
-key 			or	storage_vm_name,
-							storage_vm_storage_system_name,
-							name
-
+Optional:  
+      root,
+      rw_hosts, 
+      security_type, 
+      ro_hosts 
+      
+Del
+Mandatory: 
+      key 		      or	storage_vm_name,
+					storage_vm_storage_system_name,
+					name
+```
 		
     d) slo_fileshare : Module to manage File Shares
 		Post: 
