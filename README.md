@@ -6,11 +6,13 @@ This Puppet module will add one provider for every NSLM object that supports PUT
 
 **Note:** This readme does not provide any information or tutorial about how to use Puppet. It gives information about how users can use it to manage their data using NSLM. It is just an integration of Puppet with NSLM. For any further tutorials or information on Puppet, please refer to the https://puppet.com/ website.
 
-**Prerequisites:**
+## Prerequisites:
 
 •	Puppet Master Version: Puppet-enterprise-2017…3-el-7  
 •	Puppet Agent Version:  Puppet-agent-1.10.5-1.el7  
 •	NetApp Service Level Manager version: NSLM 1.0 RC3
+
+## Configuration:
 
 NSLM Puppet Module Configuration in existing Puppet setup:
 
@@ -27,11 +29,11 @@ NSLM Puppet Module Configuration in existing Puppet setup:
 
 Configuration of NSLM server as a Puppet proxy device:
 
-1.	Go to Puppet Agent at the following location:
+4.	Go to Puppet Agent at the following location:
 
 	    /etc/puppetlabs/puppet/
 
-2.	Create a ‹file-name›.conf file to add the NSLM-Server as a managed node in the Puppet device.conf file template:
+5.	Create a ‹file-name›.conf file to add the NSLM-Server as a managed node in the Puppet device.conf file template:
 ```
 	[‹node name›]    
 	[type netapp]    
@@ -43,7 +45,8 @@ Configuration of NSLM server as a Puppet proxy device:
 	[type netapp]    
 	[url https://admin:Netapp1!@scspr0333377003.gdl.englab.netapp.com:8443/]
 ```  
-3.	List all the NSLM puppet modules and attribute the details of each module:
+## Modules and Attribute-List
+List of all the NSLM puppet modules and attribute, with the details of each module:
 ```
 a) slo_cifsshare : Module to manage cifsshare
 ```
@@ -328,7 +331,7 @@ Mandatory:
       key 			or 		name
 ```
 
-**Sample manifest file**
+## Sample manifest file
 
 The following sample of a Manifest file will create a LUN and an igroup, and then map the LUN to the igroup:
 
@@ -360,3 +363,7 @@ The following sample of a Manifest file will create a LUN and an igroup, and the
         lun_name => "finance_lun"
         }
     }
+    
+    
+  ##  Support
+Please enter an issue (https://github.com/NetApp/Puppet-with-NetApp-Service-Level-Manager/issues) if you would like to report a defect
