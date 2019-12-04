@@ -43,7 +43,7 @@ Configuration of NSLM server as a Puppet proxy device:
 ```
 	[nslm-server]    
 	[type netapp]    
-	[url https://admin:Netapp1!@scspr0333377003.gdl.englab.netapp.com:8443/]
+	[url https://<username>:<password>@<domain-name>:<port-number>/]
 ```  
 ## Modules and Attribute-List
 List of all the NSLM puppet modules and attribute, with the details of each module:
